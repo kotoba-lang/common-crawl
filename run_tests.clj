@@ -14,7 +14,8 @@
 (cp/add-classpath (str (fs/file (fs/parent (fs/absolutize *file*)) "clj")))
 
 (def suites
-  '[common-crawl.did-test
+  '[common-crawl.classify-test
+    common-crawl.did-test
     common-crawl.intel-test
     common-crawl.cypher-test
     common-crawl.inject-test])

@@ -3,8 +3,11 @@
   `rust/cc-phase3/src/main.rs`.
 
   ADR-2607072000 says implementations that would reach for Rust are written in
-  `.cljc` here. `cc-phase3` is a WAT→Parquet pipeline, and most of it really is
-  mechanism: rayon fan-out, gzip streaming, Arrow/Parquet writers. But
+  `.cljc` here. `cc-phase3` is a WAT→Parquet pipeline, and the rest of it is
+  transport: rayon fan-out, gzip streaming, Arrow/Parquet writers — for which
+  portable `.cljc` does exist (`kotoba-lang/org-apache-parquet`,
+  `org-apache-arrow`, `columnar`). The remaining gap is narrower than it was
+  once written to be — see MIGRATION-TODO. But
   `classify_topic` and `extract_domain` are neither — they are a table of rules
   and a string scan, i.e. exactly the part that decides what the corpus SAYS
   about a page. That part belongs here, the way `common-crawl.did` already

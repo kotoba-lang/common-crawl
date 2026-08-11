@@ -25,13 +25,36 @@ Rust is mechanism, and is named here rather than left to be discovered:
 
 - `rust/cc-phase3` — rayon fan-out over WAT files, MultiGzDecoder streaming,
   Arrow/Parquet writers, resume state, ctrl-c handling. The pipeline is
-  DEPLOYED; deleting this today removes a working path and gains nothing,
-  because the parquet half has no cljc replacement (MIGRATION-TODO already
-  records "parquet I/O stays in .py -- pyarrow hard dep -- do NOT reimplement",
-  and that reasoning applies here too).
+  DEPLOYED, so it stays until something replaces it end to end.
+
+  **Correction (2026-08-11).** An earlier version of this section said the
+  parquet half "has no cljc replacement". That was wrong, and it was wrong in
+  the way this workspace has a rule against: asserted without looking. There
+  are portable `.cljc` implementations, and the session that wrote the false
+  claim had them listed in front of it:
+
+    kotoba-lang/org-apache-parquet  Parquet reader AND writer, statistics
+                                    computed into the footer as it writes
+    kotoba-lang/org-apache-arrow    Arrow IPC reader and writer
+    kotoba-lang/columnar            the vectorized execution core both feed
+
+  What is actually missing is narrower and should be stated as such:
+
+    * `parquet.write` emits PLAIN-encoded, UNCOMPRESSED pages. cc-phase3
+      writes ZSTD. The codec is understood on the READ path; the write path
+      does not yet offer it.
+    * rayon's fan-out has no obvious counterpart here. A search of the repo and
+      concept indexes did not surface one — which, per those indexes' own
+      warning, is not proof that none exists.
+
+  So retiring cc-phase3 is a piece of work with a known shape (write-path
+  compression, plus whatever drives the fan-out), not a blocked one. The
+  pyarrow note elsewhere in this file is about the .py path and does not
+  transfer.
 - `rust/cc-domain-extract` — rayon scan of `batch_*.sql` plus gzip JSONL output.
   Its entire reason for existing is throughput (~200-500 files/s against
-  Python's ~11); a port would be slower at the one thing it is for.
+  Python's ~11). A port is only worth making if it is measured against that
+  number rather than assumed to be close to it.
 
 So the invariant to hold is the one `common-crawl.did` already states: the cljc
 is the SSoT for what these functions DECIDE, the Rust may keep doing it fast,

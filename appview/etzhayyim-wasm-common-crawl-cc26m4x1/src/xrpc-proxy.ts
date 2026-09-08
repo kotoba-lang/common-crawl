@@ -1,3 +1,9 @@
+// SVELTEKIT-BACKEND-PRESERVED: moved out of svelte/ during the cljs migration; not wired.
+// Originally svelte/src/routes/xrpc/[...path]/+server.ts — a SvelteKit server
+// route that proxied POST /xrpc/* to the MCP router. Preserved verbatim (apart
+// from this header) because it is a backend handler, not frontend authoring
+// surface. It imports SvelteKit-only symbols (`@sveltejs/kit`, `./$types`) and
+// will not run as-is; whether/how to revive it is an undecided product question.
 import { json, type RequestEvent } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 

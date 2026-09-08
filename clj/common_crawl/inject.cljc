@@ -9,7 +9,7 @@
 (ns common-crawl.inject
   "Phase 5 — load CC domains, derive DIDs, build the PDS identity.create + createRecord
    payloads (pure helpers + a clj XRPC caller)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [cheshire.core :as json])
             #?(:clj [babashka.http-client :as http])))
 

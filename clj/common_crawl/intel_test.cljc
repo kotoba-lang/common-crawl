@@ -1,6 +1,6 @@
 (ns common-crawl.intel-test
   (:require [common-crawl.intel :as intel]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is run-tests]]))
 
 (deftest strip-think-removes-reasoning

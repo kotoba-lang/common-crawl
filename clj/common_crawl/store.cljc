@@ -12,7 +12,7 @@
 ;; reimplemented here — those modules keep their .py and are marked partial.
 (ns common-crawl.store
   "Injectable store seam — substitutes for the forbidden RisingWave/psycopg coupling."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defprotocol Store
   "Minimal surface the ported pipeline needs from its substrate."

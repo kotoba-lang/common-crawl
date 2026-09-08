@@ -14,7 +14,7 @@
 (ns common-crawl.did
   "Per-page DID derivation — pure, JVM/cljs/bb-portable, byte-exact mirror of the
    Rust + Python SSoT."
-  (:require [clojure.string :as str])
+  (:require [kotoba.lang.text :as str])
   #?(:clj (:import [java.security MessageDigest])))
 
 (def did-prefix "did:web:site.etzhayyim.com:")
@@ -39,7 +39,7 @@
                    c  (char ub)]
                (if (contains? safe-chars c)
                  c
-                 (str "%" (str/upper-case (cond-> (Integer/toHexString ub)
+                 (str "%" (str/upper (cond-> (Integer/toHexString ub)
                                             (< ub 16) (->> (str "0")))))))))))
 
 (defn domain-to-slug

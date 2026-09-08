@@ -13,7 +13,7 @@
 ;;             `common-crawl.store/Store` seam (RisingWave is forbidden canonical state).
 (ns common-crawl.intel
   "Phase 4 — structured domain-intel extraction (pure helpers + Murakumo loopback call)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [cheshire.core :as json])
             #?(:clj [babashka.http-client :as http])))
 

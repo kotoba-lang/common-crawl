@@ -8,7 +8,7 @@
 ;; endpoint — kept, since it is the kotoba-side write surface, not RisingWave).
 (ns common-crawl.cypher
   "Phase 5b — Cypher batch parsing + per-label record building (pure)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def site-did-prefix "did:web:site.etzhayyim.com:")
 

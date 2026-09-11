@@ -1,7 +1,7 @@
 # Python + Rust → clj/cljc port status (ADR-2606280030, ADR-2607072000)
 
 Status: **partial**. Pure-logic cores ported to idiomatic `.cljc` under `clj/`
-(`bb run_tests.clj` -> 22 tests / 88 assertions green). ALL `.py` are KEPT -- the
+(`bb run_tests.cljk` -> 22 tests / 88 assertions green). ALL `.py` are KEPT -- the
 pipeline is deployed (rust/cc-phase3, wasm appview, live RisingWave tables) and the
 ported namespaces are not yet wired in. `py_removed = 0`.
 

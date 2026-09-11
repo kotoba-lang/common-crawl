@@ -5,4 +5,4 @@
 {:paths ["clj"]
  :tasks
  {test {:doc "Run the common-crawl clj/cljc test suites under bb."
-        :task (load-file "run_tests.clj")}}}
+        :task (load-file "run_tests.cljk")}}}

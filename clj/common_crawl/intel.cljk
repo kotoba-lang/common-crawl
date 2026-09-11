@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; etzhayyim-project-common-crawl — Phase 4 domain-intel extraction (clj/cljc port of
 ;; scripts/phase4_intel_risingwave.py; ADR-2606280030).
 ;;

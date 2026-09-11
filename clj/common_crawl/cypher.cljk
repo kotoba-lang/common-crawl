@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; etzhayyim-project-common-crawl — Phase 5b Cypher-batch parser (clj/cljc port of
 ;; scripts/phase5b_inject_pages.py; ADR-2606280030).
 ;;

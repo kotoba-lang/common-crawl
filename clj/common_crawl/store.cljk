@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; etzhayyim-project-common-crawl — injectable substrate store seam (ADR-2606280030).
 ;;
 ;; The legacy Python pipeline talked to RisingWave/psycopg2 directly (phase3g/3i,

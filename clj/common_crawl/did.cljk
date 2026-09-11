@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; etzhayyim-project-common-crawl — per-page DID derivation (clj/cljc port of the
 ;; Python mirror in scripts/phase3h_transform_parquet.py; ADR-2606280030).
 ;;

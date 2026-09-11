@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; etzhayyim-project-common-crawl — Phase 5 DID/domain injection (clj/cljc port of
 ;; scripts/phase5_inject_did.py; ADR-2606280030).
 ;;

@@ -57,7 +57,7 @@
    :app/vars []
    :app/xrpc? true
    :app/relative-path
-   "appview/etzhayyim-wasm-common-crawl-cc26m4x1/cljs/src/etzhayyim/wasm/common_crawl/app.cljs"})
+   "appview/etzhayyim-wasm-common-crawl-cc26m4x1/cljs/src/etzhayyim/wasm/common_crawl/app.cljk"})
 
 (rf/reg-event-db
  :initialize-db

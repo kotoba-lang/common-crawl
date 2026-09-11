@@ -17,7 +17,7 @@
 
 (deftest relative-path-points-at-the-cljs-source-not-the-retired-svelte-file
   (testing "the Source panel must not describe a file that no longer exists"
-    (is (= "appview/etzhayyim-wasm-common-crawl-cc26m4x1/cljs/src/etzhayyim/wasm/common_crawl/app.cljs"
+    (is (= "appview/etzhayyim-wasm-common-crawl-cc26m4x1/cljs/src/etzhayyim/wasm/common_crawl/app.cljk"
            (:app/relative-path app/default-db)))
     (is (not (re-find #"svelte" (:app/relative-path app/default-db))))))
 

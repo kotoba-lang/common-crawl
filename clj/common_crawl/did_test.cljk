@@ -2,7 +2,7 @@
 ;; page_did_from_url() — these MUST stay byte-identical to the Python + Rust output.
 (ns common-crawl.did-test
   (:require [common-crawl.did :as d]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (deftest encode-segment-passes-safe-chars
   (is (= "abcXYZ-0_9.q" (d/encode-segment "abcXYZ-0_9.q")))

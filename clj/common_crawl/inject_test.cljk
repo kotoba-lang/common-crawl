@@ -2,7 +2,7 @@
   (:require [common-crawl.inject :as inj]
             [common-crawl.store :as store]
             [cheshire.core :as json]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (deftest slug-and-did-derivation
   (is (= "example-com" (inj/domain-slug {"domain" "example.com"})))

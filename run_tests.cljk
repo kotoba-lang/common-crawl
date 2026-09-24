@@ -8,7 +8,7 @@
 ;; common-crawl.* namespaces + their *_test twins resolve without a --classpath flag.
 (require '[babashka.classpath :as cp]
          '[babashka.fs :as fs]
-         '[clojure.test :as t])
+         '[kotoba.test :as t])
 
 ;; this file is <app>/run_tests.cljk → classpath root is <app>/clj
 (cp/add-classpath (str (fs/file (fs/parent (fs/absolutize *file*)) "clj")))

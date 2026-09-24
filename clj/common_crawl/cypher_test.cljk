@@ -1,6 +1,6 @@
 (ns common-crawl.cypher-test
   (:require [common-crawl.cypher :as c]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def full-page
   (str "MERGE (p:PageRecord {rkey: \"RK1\"}) ON CREATE SET "

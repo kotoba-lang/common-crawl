@@ -17,7 +17,7 @@
       change here, because rows are keyed on this string.
 
   Change the Rust, change this file, and regenerate rather than reason."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [common-crawl.classify :as classify]))
 
 (def topic-cases

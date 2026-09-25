@@ -14,7 +14,7 @@
 (ns common-crawl.did
   "Per-page DID derivation — pure, JVM/cljs/bb-portable, byte-exact mirror of the
    Rust + Python SSoT."
-  (:require [kotoba.lang.text :as str])
+  (:require [kotoba.bytes :as kbytes] [kotoba.lang.text :as str])
   #?(:clj (:import [java.security MessageDigest])))
 
 (def did-prefix "did:web:site.etzhayyim.com:")
@@ -24,7 +24,7 @@
   (set "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._"))
 
 (defn- utf8-bytes ^bytes [^String s]
-  #?(:clj (.getBytes s "UTF-8")
+  #?(:clj (kbytes/utf8-bytes s)
      :cljs (js/Array.from (.encode (js/TextEncoder.) s))))
 
 (defn encode-segment
@@ -68,7 +68,7 @@
   "First 16 hex chars of SHA-256(url)."
   [^String url]
   #?(:clj (let [md  (MessageDigest/getInstance "SHA-256")
-                dig (.digest md (.getBytes url "UTF-8"))]
+                dig (.digest md (kbytes/utf8-bytes url))]
             (subs (apply str (map #(format "%02x" (bit-and (int %) 0xFF)) dig)) 0 16))
      :cljs (throw (ex-info "sha256-hex16 not implemented for cljs" {:url url}))))
 

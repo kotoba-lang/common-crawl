@@ -2,7 +2,7 @@
 ;; etzhayyim-project-common-crawl — per-page DID derivation (clj/cljc port of the
 ;; Python mirror in scripts/phase3h_transform_parquet.py; ADR-2606280030).
 ;;
-;; SSoT INVARIANT (repo CLAUDE.md "Per-page DID Actor"):
+;; SSoT INVARIANT (repo AGENTS.md "Per-page DID Actor"):
 ;;   `page-did-from-url` here, `page_did_from_url()` in scripts/phase3h_transform_parquet.py,
 ;;   and `page_did_from_url` in rust/cc-phase3/src/main.rs MUST produce identical output.
 ;;   Change one, change all (and add a test).

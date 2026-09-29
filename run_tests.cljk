@@ -1,6 +1,6 @@
 #!/usr/bin/env kbb
 ;; etzhayyim-project-common-crawl — bb-native test runner (Clojure, no shell; repo
-;; CLAUDE.md §"Operational code = clj/bb", ADR-2606072802 / ADR-2606280030).
+;; AGENTS.md §"Operational code = clj/bb", ADR-2606072802 / ADR-2606280030).
 ;;
 ;;   kbb 60-apps/etzhayyim-project-common-crawl/run_tests.cljk
 ;;

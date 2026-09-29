@@ -4,7 +4,7 @@
 ;; The legacy Python pipeline talked to RisingWave/psycopg2 directly (phase3g/3i,
 ;; phase4, phase5's --from-rw loader) and to a "graph adapter" HTTP endpoint
 ;; (phase5b). RisingWave/Postgres are FORBIDDEN as canonical state by the repo
-;; substrate boundary (root CLAUDE.md: state = kotoba Datom log, no RisingWave).
+;; substrate boundary (root AGENTS.md: state = kotoba Datom log, no RisingWave).
 ;;
 ;; This ns defines a thin `Store` protocol so the ported namespaces never name a
 ;; backend: a kotoba-Datom-log store, an HTTP graph-adapter store, or an in-memory
